@@ -7,6 +7,8 @@
 | Get  | She gets      | She got    | She is getting      | She was getting | She will get  | She has gotten   |
 | Make | She makes     | She made   | She is making       | She was making  | She will make | She has made     |
 | Go   | She goes      | She went   | She is going        | She was going   | She will go   | She has gone     |
+| Hide | She hides     | She hid   | She is hiding        | She was hiding | She will hide | She has hidden    |
+| Catch | She catches   | She caught   | She is catching   | She was catching | She will catch | She has caught    |
 | Know | She knows     | She knew   | She is knowing      | She was knowing | She will know | She has known    |
 | Take | She takes     | She took   | She is taking       | She was taking  | She will take | She has taken    |
 | See  | She sees      | She saw    | She is seeing       | She was seeing  | She will see  | She has seen     |
