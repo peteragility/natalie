@@ -43,7 +43,7 @@ function App() {
 
   const startNewRound = () => {
     const shuffled = [...words].sort(() => 0.5 - Math.random());
-    setCurrentRound(shuffled.slice(0, 10));
+    setCurrentRound(shuffled.slice(0, 20));
     setIsPlaying(true);
     setCurrentScore(0);
   };
@@ -67,7 +67,7 @@ function App() {
           allWords={words}
           onAnswer={handleAnswer}
           onGameEnd={handleGameEnd}
-          maxWords={50}
+          maxWords={20}
         />
       ) : (
         <button onClick={startNewRound}>Start New Round</button>

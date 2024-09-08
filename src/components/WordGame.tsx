@@ -27,6 +27,8 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   const [isAnswering, setIsAnswering] = useState(true);
   const [timeLeft, setTimeLeft] = useState(15);
 
+  const QUESTIONS_PER_ROUND = 20;
+
   const generateOptions = useCallback(() => {
     const correctAnswer = words[currentWordIndex].chinese;
     const incorrectOptions = allWords
@@ -68,7 +70,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   const moveToNextQuestion = () => {
     setMessage('');
     setSelectedOption(null);
-    if (answeredCount + 1 >= maxWords || currentWordIndex + 1 >= words.length) {
+    if (answeredCount + 1 >= QUESTIONS_PER_ROUND) {
       onGameEnd();
     } else {
       setCurrentWordIndex(prevIndex => (prevIndex + 1) % words.length);
@@ -101,10 +103,9 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   return (
     <div className="word-game">
       <div className="game-header">
-        <h1>Academic Word Game</h1>
+        <div className="timer">Time left: {timeLeft}s</div>
         <p className="current-score">Score: {currentScore} / {answeredCount}</p>
       </div>
-      <div className="timer">Time left: {timeLeft}s</div>
       <div className="question-area">
         <h2>{words[currentWordIndex].english}</h2>
         <p className="example">{words[currentWordIndex].example}</p>
