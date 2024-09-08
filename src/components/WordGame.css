@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 1vh 2vw;
+    padding: 1rem 2vw;
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 .game-header {
@@ -13,6 +13,32 @@
     align-items: center;
     height: 4vh;
     padding: 0 2vw;
+    margin-bottom: 1vh;
+}
+
+.timer, .score-and-progress {
+    font-size: 2.5vmin;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.timer {
+    justify-content: flex-start;
+}
+
+.score-and-progress {
+    justify-content: flex-end;
+}
+
+.question-count, .current-score {
+    flex: 1;
+    font-size: calc(0.8rem + 0.5vw);
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 .question-area {
@@ -41,13 +67,13 @@
 }
 
 .example {
-    font-size: 3vmin;
+    font-size: calc(0.9rem + 0.5vw);
     color: #e21b3c;
     font-style: italic;
-    margin-top: 1vh;
-    padding: 1vh;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 1vmin;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -61,19 +87,20 @@
 }
 
 .option-button {
-    font-size: 4vmin;
+    font-size: calc(0.8rem + 0.5vw);
     cursor: pointer;
     border: none;
-    border-radius: 2vmin;
+    border-radius: 0.5rem;
     transition: transform 0.1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2vmin;
+    padding: 0.75rem;
     color: white;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .option-button:hover {
@@ -138,49 +165,35 @@
     color: #333;
 }
 
-.timer {
-    font-size: 2.5vmin;
-    color: #333;
-    font-weight: bold;
-}
-
-.current-score {
-    font-size: 2.5vmin;
-    color: #666;
-    font-weight: bold;
-}
-
 @media (max-aspect-ratio: 1/1) {
     .options-grid {
         grid-template-columns: 1fr;
+        gap: 0.625rem;
     }
     
     .question-area h2 {
-        font-size: 8vmin;
+        font-size: calc(1.2rem + 1vw);
     }
     
     .example {
-        font-size: 4vmin;
+        font-size: calc(0.8rem + 0.5vw);
     }
     
     .option-button {
-        font-size: 5vmin;
+        font-size: calc(0.9rem + 0.5vw);
+        padding: 1rem;
     }
 }
 
 .read-aloud-button {
     background: none;
     border: none;
-    font-size: 4vmin;
+    font-size: calc(1rem + 0.5vw);
     cursor: pointer;
-    padding: 0.5vmin;
+    padding: 0.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.read-aloud-button:hover {
-    transform: scale(1.1);
 }
 
 .example-container {

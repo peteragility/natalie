@@ -105,7 +105,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
     <div className="word-game">
       <div className="game-header">
         <div className="timer">Time left: {timeLeft}s</div>
-        <p className="current-score">Score: {currentScore} / {answeredCount}</p>
+        <div className="score-and-progress">Word {answeredCount + 1} of {QUESTIONS_PER_ROUND} | Score: {currentScore}</div>
       </div>
       <div className="question-area">
         <div className="question-header">
