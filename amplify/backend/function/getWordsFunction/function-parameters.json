@@ -1,9 +1,0 @@
-{
-  "lambdaLayers": [],
-  "environmentVariableList": [
-    {
-      "cloudFormationParameterName": "apiNataliewordsWordtableName",
-      "environmentVariableName": "API_NATALIEWORDS_WORDTABLE_NAME"
-    }
-  ]
-}
