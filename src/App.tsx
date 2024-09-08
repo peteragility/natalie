@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
-import WordCard from './components/WordCard';
+import WordGame from './components/WordGame';
 import ScoreBoard from './components/ScoreBoard';
 
 interface Word {
@@ -12,8 +12,10 @@ interface Word {
 
 function App() {
   const [words, setWords] = useState<Word[]>([]);
-  const [currentWord, setCurrentWord] = useState<Word | null>(null);
-  const [score, setScore] = useState(0);
+  const [currentRound, setCurrentRound] = useState<Word[]>([]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [roundScores, setRoundScores] = useState<{ correct: number; total: number }[]>([]);
+  const [currentScore, setCurrentScore] = useState(0);
 
   useEffect(() => {
     fetchWords();
@@ -34,29 +36,43 @@ function App() {
       }));
       
       setWords(wordList);
-      selectRandomWord(wordList);
     } catch (error) {
       console.error('Error fetching words:', error);
     }
   };
 
-  const selectRandomWord = (wordList: Word[]) => {
-    const randomIndex = Math.floor(Math.random() * wordList.length);
-    setCurrentWord(wordList[randomIndex]);
+  const startNewRound = () => {
+    const shuffled = [...words].sort(() => 0.5 - Math.random());
+    setCurrentRound(shuffled.slice(0, 10));
+    setIsPlaying(true);
+    setCurrentScore(0);
   };
 
-  const handleGuess = (guess: string) => {
-    if (currentWord && guess.toLowerCase() === currentWord.english.toLowerCase()) {
-      setScore(score + 1);
-    }
-    selectRandomWord(words);
+  const handleAnswer = useCallback((isCorrect: boolean) => {
+    setCurrentScore(prevScore => prevScore + (isCorrect ? 1 : 0));
+  }, []);
+
+  const handleGameEnd = () => {
+    setIsPlaying(false);
+    setRoundScores(prevScores => [...prevScores, { correct: currentScore, total: currentRound.length }]);
+    console.log(`Round ended. Score: ${currentScore}/${currentRound.length}`);
   };
 
   return (
     <div className="App">
       <h1>Academic Word Game</h1>
-      <ScoreBoard score={score} />
-      {currentWord && <WordCard word={currentWord} onGuess={handleGuess} />}
+      {isPlaying ? (
+        <WordGame
+          words={currentRound}
+          allWords={words}
+          onAnswer={handleAnswer}
+          onGameEnd={handleGameEnd}
+          maxWords={50}
+        />
+      ) : (
+        <button onClick={startNewRound}>Start New Round</button>
+      )}
+      <ScoreBoard currentScore={currentScore} roundScores={roundScores} />
     </div>
   );
 }

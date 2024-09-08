@@ -1,33 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+interface Word {
+  english: string;
+  chinese: string;
+  example: string;
+}
 
 interface WordCardProps {
-  word: string;
-  example: string;
+  word: Word;
+  options: string[];
   onGuess: (guess: string) => void;
 }
 
-const WordCard: React.FC<WordCardProps> = ({ word, example, onGuess }) => {
-  const [guess, setGuess] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onGuess(guess);
-    setGuess('');
-  };
-
+const WordCard: React.FC<WordCardProps> = ({ word, options, onGuess }) => {
   return (
     <div className="word-card">
-      <h2>{word}</h2>
-      <p>{example}</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={guess}
-          onChange={(e) => setGuess(e.target.value)}
-          placeholder="Enter Chinese translation"
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <h2>{word.english}</h2>
+      <p>{word.example}</p>
+      <div className="options">
+        {options.map((option, index) => (
+          <button key={index} onClick={() => onGuess(option)}>
+            {option}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
