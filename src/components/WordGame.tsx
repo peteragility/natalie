@@ -25,6 +25,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   const [currentScore, setCurrentScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isAnswering, setIsAnswering] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(15);
 
   const generateOptions = useCallback(() => {
     const correctAnswer = words[currentWordIndex].chinese;
@@ -38,10 +39,41 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   }, [words, allWords, currentWordIndex]);
 
   useEffect(() => {
-    if (currentWordIndex < words.length) {
+    if (words.length > 0) {
       generateOptions();
+      setTimeLeft(15);
+      setIsAnswering(true);
     }
-  }, [currentWordIndex, words, generateOptions]);
+  }, [words, currentWordIndex, generateOptions]);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isAnswering && timeLeft > 0) {
+      timer = setTimeout(() => setTimeLeft(time => time - 1), 1000);
+    } else if (timeLeft === 0 && isAnswering) {
+      handleTimeUp();
+    }
+    return () => clearTimeout(timer);
+  }, [timeLeft, isAnswering]);
+
+  const handleTimeUp = () => {
+    setIsAnswering(false);
+    onAnswer(false);
+    setMessage('Time\'s up!');
+    setAnsweredCount(prev => prev + 1);
+    
+    setTimeout(moveToNextQuestion, 2000);
+  };
+
+  const moveToNextQuestion = () => {
+    setMessage('');
+    setSelectedOption(null);
+    if (answeredCount + 1 >= maxWords || currentWordIndex + 1 >= words.length) {
+      onGameEnd();
+    } else {
+      setCurrentWordIndex(prevIndex => (prevIndex + 1) % words.length);
+    }
+  };
 
   const handleOptionClick = (option: string) => {
     if (!isAnswering) return;
@@ -59,17 +91,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
     
     setAnsweredCount(prev => prev + 1);
     
-    setTimeout(() => {
-      setMessage('');
-      setFeedbackClass('');
-      setSelectedOption(null);
-      setIsAnswering(true);
-      if (answeredCount + 1 >= maxWords || currentWordIndex + 1 >= words.length) {
-        onGameEnd();
-      } else {
-        setCurrentWordIndex(prevIndex => (prevIndex + 1) % words.length);
-      }
-    }, 2000);
+    setTimeout(moveToNextQuestion, 2000);
   };
 
   if (answeredCount >= maxWords || currentWordIndex >= words.length) {
@@ -82,6 +104,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
         <h1>Academic Word Game</h1>
         <p className="current-score">Score: {currentScore} / {answeredCount}</p>
       </div>
+      <div className="timer">Time left: {timeLeft}s</div>
       <div className="question-area">
         <h2>{words[currentWordIndex].english}</h2>
         <p className="example">{words[currentWordIndex].example}</p>
