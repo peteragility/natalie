@@ -1,0 +1,14 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nataliewords-dev-0a8a4-authRole",
+      "UnauthRoleArn": "arn:aws:iam::693858346231:role/amplify-nataliewords-dev-0a8a4-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::693858346231:role/amplify-nataliewords-dev-0a8a4-authRole",
+      "Region": "ap-east-1",
+      "DeploymentBucketName": "amplify-nataliewords-dev-0a8a4-deployment",
+      "UnauthRoleName": "amplify-nataliewords-dev-0a8a4-unauthRole",
+      "StackName": "amplify-nataliewords-dev-0a8a4",
+      "StackId": "arn:aws:cloudformation:ap-east-1:693858346231:stack/amplify-nataliewords-dev-0a8a4/f60c8be0-6daa-11ef-b279-0e5e519d03c3"
+    }
+  }
+}
