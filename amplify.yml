@@ -3,8 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 16
-        - nvm use 16
         - npm ci
         - npm install -g typescript
         - npm install --save-dev @types/aws-lambda @types/aws-sdk
