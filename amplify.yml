@@ -5,6 +5,7 @@ frontend:
       commands:
         - npm ci
         - npm install -g typescript
+        - npm install --save-dev @types/aws-lambda @types/aws-sdk
     build:
       commands:
         - npm run tsc
