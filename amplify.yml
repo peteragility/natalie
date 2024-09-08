@@ -4,8 +4,10 @@ frontend:
     preBuild:
       commands:
         - npm ci
+        - npm install -g typescript
     build:
       commands:
+        - npm run tsc
         - npm run build
   artifacts:
     baseDirectory: build
