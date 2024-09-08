@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import './WordGame.css'; // We'll create this file for styling
+import './WordGame.css';
 
 interface Word {
   id?: string;
@@ -20,12 +20,12 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [options, setOptions] = useState<string[]>([]);
   const [message, setMessage] = useState('');
-  const [feedbackClass, setFeedbackClass] = useState('');
   const [answeredCount, setAnsweredCount] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isAnswering, setIsAnswering] = useState(true);
   const [timeLeft, setTimeLeft] = useState(15);
+  const [answered, setAnswered] = useState(false);
 
   const QUESTIONS_PER_ROUND = 20;
 
@@ -60,6 +60,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
 
   const handleTimeUp = () => {
     setIsAnswering(false);
+    setAnswered(true);
     onAnswer(false);
     setMessage('Time\'s up!');
     setAnsweredCount(prev => prev + 1);
@@ -70,6 +71,7 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
   const moveToNextQuestion = () => {
     setMessage('');
     setSelectedOption(null);
+    setAnswered(false);
     if (answeredCount + 1 >= QUESTIONS_PER_ROUND) {
       onGameEnd();
     } else {
@@ -83,9 +85,8 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
     const isCorrect = option === words[currentWordIndex].chinese;
     setSelectedOption(option);
     setIsAnswering(false);
+    setAnswered(true);
     onAnswer(isCorrect);
-    setMessage(isCorrect ? 'Correct!' : 'Incorrect.');
-    setFeedbackClass(isCorrect ? 'correct' : 'incorrect');
     
     if (isCorrect) {
       setCurrentScore(prevScore => prevScore + 1);
@@ -107,8 +108,14 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
         <p className="current-score">Score: {currentScore} / {answeredCount}</p>
       </div>
       <div className="question-area">
-        <h2>{words[currentWordIndex].english}</h2>
-        <p className="example">{words[currentWordIndex].example}</p>
+        <div className="question-header">
+          <h2>{words[currentWordIndex].english}</h2>
+          <button className="read-aloud-button" onClick={() => speak(words[currentWordIndex].english)}>🔊</button>
+        </div>
+        <div className="example-container">
+          <p className="example">{words[currentWordIndex].example}</p>
+          <button className="read-aloud-button" onClick={() => speak(words[currentWordIndex].example)}>🔊</button>
+        </div>
       </div>
       <div className="options-grid">
         {options.map((option, index) => (
@@ -116,23 +123,17 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
             key={index} 
             onClick={() => handleOptionClick(option)}
             className={`option-button ${['red', 'blue', 'yellow', 'green'][index]} ${
-              !isAnswering
+              answered || !isAnswering
                 ? option === words[currentWordIndex].chinese
                   ? 'correct'
                   : option === selectedOption
-                    ? 'incorrect'
-                    : ''
+                    ? 'incorrect blurred'
+                    : 'blurred'
                 : ''
             }`}
             disabled={!isAnswering}
           >
             {option}
-            {!isAnswering && option === words[currentWordIndex].chinese && (
-              <span className="correct-mark">✓</span>
-            )}
-            {!isAnswering && option === selectedOption && option !== words[currentWordIndex].chinese && (
-              <span className="incorrect-mark">✗</span>
-            )}
           </button>
         ))}
       </div>
@@ -142,5 +143,10 @@ function WordGame({ words, allWords, onAnswer, onGameEnd, maxWords }: WordGamePr
     </div>
   );
 }
+
+const speak = (text: string) => {
+  const utterance = new SpeechSynthesisUtterance(text);
+  window.speechSynthesis.speak(utterance);
+};
 
 export default WordGame;
