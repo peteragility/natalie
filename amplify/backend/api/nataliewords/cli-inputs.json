@@ -6,6 +6,9 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 7
-    }
+    },
+    "gqlSchemaPath": "/tmp/schema.graphql",
+    "additionalAuthTypes": [],
+    "conflictResolution": {}
   }
 }

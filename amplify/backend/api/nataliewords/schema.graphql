@@ -7,3 +7,14 @@ type Todo @model {
   name: String!
   description: String
 }
+
+type Word @model @auth(rules: [{ allow: public, operations: [read] }]) {
+  id: ID!
+  english: String!
+  chinese: String!
+  example: String
+}
+
+type Query {
+  listWords: [Word] @function(name: "getWordsFunction-${env}")
+}
