@@ -1,0 +1,88 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #ff6b6b;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #feca57;
+}
+
+.word-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.word-card h2 {
+  color: #48dbfb;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.word-card p {
+  color: #54a0ff;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid #54a0ff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #5f27cd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #341f97;
+}
+
+.score-board {
+  font-size: 1.5em;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .word-card h2 {
+    font-size: 1.5em;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
+}

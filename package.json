@@ -2,9 +2,6 @@
   "name": "academic-word-game",
   "version": "1.0.0",
   "description": "A game to learn academic words",
-  "engines": {
-    "node": ">=16.x"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "tsc && react-scripts build",
