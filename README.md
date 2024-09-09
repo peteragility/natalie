@@ -14,21 +14,17 @@
 | Illustrate | 說明 | Illustrate your point with an example. |
 | Interpret | 解釋 | Interpret the results of the experiment. |
 | Justify | 證明 | Justify your choice of method. |
-| Predict | 預測 | Predict the outcome of the election. |
 | Solve | 解決 | Solve the equation for x. |
 | Calculate | 計算 | Calculate the area of the triangle. |
 | Measure | 測量 | Measure the length of the room. |
 | Observe | 觀察 | Observe the behavior of the animals. |
 | Experiment | 實驗 | Experiment with different variables. |
-| Hypothesis | 假設 | Form a hypothesis about the cause. |
 | Theory | 理論 | Develop a theory to explain the phenomenon. |
 | Evidence | 證據 | Present evidence to support your claim. |
 | Data | 數據 | Collect data from multiple sources. |
-| Conclusion | 結論 | Draw a conclusion based on the findings. |
 | Cause | 原因 | Determine the cause of the problem. |
 | Effect | 影響 | Examine the effect of the new policy. |
 | Significance | 意義 | Discuss the significance of the discovery. |
-| Factor | 因素 | Identify the factors affecting growth. |
 | Variable | 變量 | Control the variables in the experiment. |
 | Equation | 方程 | Solve the quadratic equation. |
 | Function | 函數 | Graph the function y = 2x + 3. |
@@ -153,7 +149,6 @@
 | Standard | 標準 | Meet the required standards. |
 | Measure | 衡量 | Measure the effectiveness of the program. |
 | Indicator | 指標 | Use economic indicators to assess growth. |
-| Evidence | 證據 | Present evidence to support your argument. |
 | Proof | 證明 | Provide proof for your claim. |
 | Justification | 理由 | Give justification for your decision. |
 | Rationale | 理由 | Explain the rationale behind the policy. |
@@ -178,7 +173,6 @@
 | Situation | 情況 | Assess the current situation. |
 | Circumstance | 情況 | Take into account the circumstances. |
 | Condition | 條件 | Specify the necessary conditions. |
-| Factor | 因素 | Identify the contributing factors. |
 | Variable | 變量 | Control for extraneous variables. |
 | Constant | 常量 | Keep certain factors constant in the experiment. |
 | Parameter | 參數 | Set the parameters for the study. |
