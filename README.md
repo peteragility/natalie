@@ -1,4 +1,4 @@
-# Top 200 Common Words for Academic Study
+# Common Words for Academic Study
 
 | English | Traditional Chinese | Simple Example |
 |---------|---------------------|-----------------|
@@ -204,3 +204,52 @@
 | Principle | 原則 | Adhere to ethical principles. |
 | Ethics | 倫理 | Consider the ethics of the situation. |
 | Morality | 道德 | Debate the morality of the action. |
+| Adapt | 適應 | Plants adapt to different climates. |
+| Classify | 分類 | Classify animals into different groups. |
+| Collect | 收集 | Collect data for your science project. |
+| Combine | 結合 | Combine two ideas to form a new one. |
+| Connect | 連接 | Connect the dots to see the picture. |
+| Create | 創造 | Create a poster for the school event. |
+| Demonstrate | 展示 | Demonstrate how to solve the math problem. |
+| Develop | 發展 | Develop a new hobby this summer. |
+| Discover | 發現 | Scientists discover new species every year. |
+| Discuss | 討論 | Discuss the main ideas of the story. |
+| Estimate | 估計 | Estimate the cost of the school trip. |
+| Examine | 檢查 | Examine the leaf under a microscope. |
+| Explore | 探索 | Explore different career options. |
+| Generate | 產生 | Generate ideas for your project. |
+| Improve | 改進 | Improve your handwriting with practice. |
+| Increase | 增加 | Increase your vocabulary by reading. |
+| Investigate | 調查 | Investigate why plants need sunlight. |
+| Learn | 學習 | Learn a new language this year. |
+| List | 列舉 | List the ingredients needed for the recipe. |
+| Locate | 定位 | Locate Hong Kong on a world map. |
+| Modify | 修改 | Modify your schedule to include study time. |
+| Observe | 觀察 | Observe how a caterpillar becomes a butterfly. |
+| Organize | 組織 | Organize your notes before the exam. |
+| Plan | 計劃 | Plan your study schedule for the week. |
+| Practice | 練習 | Practice playing the piano every day. |
+| Predict | 預測 | Predict what will happen next in the story. |
+| Prepare | 準備 | Prepare for the upcoming math test. |
+| Record | 記錄 | Record the growth of your plant each week. |
+| Relate | 聯繫 | Relate the story to your own experience. |
+| Review | 複習 | Review your notes before the quiz. |
+| Select | 選擇 | Select the best answer for each question. |
+| Separate | 分開 | Separate the recycling into different bins. |
+| Show | 展示 | Show your work in math problems. |
+| Simplify | 簡化 | Simplify the fraction to its lowest terms. |
+| Solve | 解決 | Solve the puzzle using logic. |
+| Sort | 排序 | Sort the numbers from smallest to largest. |
+| State | 陳述 | State the main idea of the paragraph. |
+| Suggest | 建議 | Suggest ways to improve the school environment. |
+| Summarize | 總結 | Summarize the main points of the lesson. |
+| Support | 支持 | Support your opinion with facts. |
+| Test | 測試 | Test your hypothesis with an experiment. |
+| Use | 使用 | Use a dictionary to find word meanings. |
+| Verify | 驗證 | Verify your answers after finishing the test. |
+| Write | 寫作 | Write a short story about your favorite animal. |
+| Apply | 應用 | Apply what you learned to solve new problems. |
+| Calculate | 計算 | Calculate the area of your classroom. |
+| Choose | 選擇 | Choose the best title for the paragraph. |
+| Complete | 完成 | Complete all the exercises in your workbook. |
+| Construct | 構建 | Construct a model of the solar system. |
