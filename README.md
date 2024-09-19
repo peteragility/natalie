@@ -247,3 +247,15 @@
 | Choose | 選擇 | Choose the best title for the paragraph. |
 | Complete | 完成 | Complete all the exercises in your workbook. |
 | Construct | 構建 | Construct a model of the solar system. |
+| Infection | 感染 | Prevent the spread of infection by washing hands. |
+| Strategy | 策略 | Develop a strategy to win the game. |
+| Host | 宿主 | The mosquito is a host for malaria parasites. |
+| Behavior | 行為 | Study animal behavior in their natural habitat. |
+| Zombie | 殭屍 | Write a story featuring zombies. |
+| Insert | 插入 | Insert the missing word in the sentence. |
+| Spread | 傳播 | Prevent the spread of misinformation online. |
+| Insect | 昆蟲 | Observe different types of insects in the garden. |
+| Support | 支持 | Support your classmates during difficult times. |
+| Protect | 保護 | Protect endangered species from extinction. |
+| Evolve | 進化 | Species evolve to adapt to their environment. |
+| Effort | 努力 | Put in extra effort to improve your grades. |
